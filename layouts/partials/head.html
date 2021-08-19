@@ -13,6 +13,11 @@
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 {{ end -}}
 
+{{if (.Params.mermaid)}}
+  <!-- MermaidJS support -->
+  <script async src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+{{end}}
+
 {{ partialCached "favicons.html" . }}
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 <!-- for search engine optimization and third-party search engines like Elastic App Search-->
